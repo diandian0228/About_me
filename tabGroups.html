@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>多模式分頁啟動器</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    button {
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 多模式分頁啟動器</h1>
+  <p>選擇一種模式來一鍵開啟常用分頁</p>
+
+  <button onclick="openTabs('gaming')">🎮 遊戲模式</button>
+  <button onclick="openTabs('crypto')">💰 虛擬貨幣模式</button>
+  <button onclick="openTabs('work')">🧑‍💼 工作模式</button>
+
+  <script>
+    const tabGroups = {
+      gaming: [
+        "https://www.youtube.com/",
+        "https://www.ign.com/",
+        "https://discord.com/"
+      ],
+      crypto: [
+        "https://www.tradingview.com/",
+        "https://blave.io/",
+        "https://www.binance.com/"
+      ],
+      work: [
+        "https://mail.google.com/",
+        "https://www.notion.so/",
+        "https://www.jira.com/"
+      ]
+    };
+
+    function openTabs(mode) {
+      const urls = tabGroups[mode];
+      if (!urls) return;
+      urls.forEach(url => window.open(url, '_blank'));
+    }
+  </script>
+</body>
+</html>
